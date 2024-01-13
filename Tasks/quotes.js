@@ -2,16 +2,20 @@
 
 'use strict';
 
+const REPLACED_QUOTATION = '"';
+const OPEN_QUOTATION = '«';
+const CLOSE_QUOTATION = '»';
+
 const changeQuotes = (str) => {
   const symbols = [];
   let open = false;
   for (const c of str) {
-    if (c === '"') {
+    if (c === REPLACED_QUOTATION) {
       if (!open) {
-        symbols.push('«');
+        symbols.push(OPEN_QUOTATION);
         open = true;
       } else {
-        symbols.push('»');
+        symbols.push(CLOSE_QUOTATION);
         open = false;
       }
     } else {
