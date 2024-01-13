@@ -2,23 +2,23 @@
 
 'use strict';
 
-const quotes = (s) => {
-  const res = [];
+const changeQuotes = (str) => {
+  const symbols = [];
   let open = false;
-  for (const c of s) {
+  for (const c of str) {
     if (c === '"') {
       if (!open) {
-        res.push('«');
+        symbols.push('«');
         open = true;
       } else {
-        res.push('»');
+        symbols.push('»');
         open = false;
       }
     } else {
-      res.push(c);
+      symbols.push(c);
     }
   }
-  return res.join('');
+  return symbols.join('');
 };
 
-module.exports = quotes;
+module.exports = changeQuotes;
