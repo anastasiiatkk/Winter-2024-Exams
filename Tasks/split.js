@@ -2,11 +2,11 @@
 
 'use strict';
 
-const split_Array = (index, array) => {
-  const begin = array.slice(0, index);
+const splitArray = (index, array) => {
+  const first = array.slice(0, index);
   const len = array.length;
   array = array.slice(index, len);
-  return [begin, array];
+  return [first, array];
 };
 
-module.exports = split_Array;
+module.exports = splitArray;
