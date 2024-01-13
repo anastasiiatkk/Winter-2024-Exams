@@ -2,13 +2,13 @@
 
 'use strict';
 
-const incNumbers = (formatComplete) => {
-  for (const deleteFile in formatComplete) {
-    if ((typeof formatComplete[deleteFile]).charAt(0).toUpperCase() === 'N') {
-      formatComplete[deleteFile] = formatComplete[deleteFile] + 1;
+const incNumbers = (obj) => {
+  for (const key in obj) {
+    if ((typeof obj[key]).charAt(0).toUpperCase() === 'N') {
+      obj[key] = obj[key] + 1;
     }
   }
-  return formatComplete;
+  return obj;
 };
 
 module.exports = incNumbers;
