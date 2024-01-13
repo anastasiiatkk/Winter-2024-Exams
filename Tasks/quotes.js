@@ -2,27 +2,17 @@
 
 'use strict';
 
-const REPLACED_QUOTATION = '"';
-const OPEN_QUOTATION = '«';
-const CLOSE_QUOTATION = '»';
+const REPLACED_QUOTES = '"';
+const OPEN_QUOTES = '«';
+const CLOSE_QUOTES = '»';
 
 const changeQuotes = (str) => {
-  const symbols = [];
-  let open = false;
-  for (const c of str) {
-    if (c === REPLACED_QUOTATION) {
-      if (!open) {
-        symbols.push(OPEN_QUOTATION);
-        open = true;
-      } else {
-        symbols.push(CLOSE_QUOTATION);
-        open = false;
-      }
-    } else {
-      symbols.push(c);
-    }
-  }
-  return symbols.join('');
+  let open = true;
+  return str.replaceAll(REPLACED_QUOTES, () => {
+    const quotes = open ? OPEN_QUOTES : CLOSE_QUOTES;
+    open = !open;
+    return quotes;
+  });
 };
 
 module.exports = changeQuotes;
