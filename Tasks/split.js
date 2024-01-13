@@ -4,8 +4,8 @@
 
 const splitArray = (index, array) => {
   const first = array.slice(0, index);
-  array = array.slice(index);
-  return [first, array];
+  const second = array.slice(index);
+  return [first, second];
 };
 
 module.exports = splitArray;
