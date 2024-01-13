@@ -4,8 +4,7 @@
 
 const splitArray = (index, array) => {
   const first = array.slice(0, index);
-  const len = array.length;
-  array = array.slice(index, len);
+  array = array.slice(index);
   return [first, array];
 };
 
