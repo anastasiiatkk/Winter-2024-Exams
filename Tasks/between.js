@@ -1,5 +1,7 @@
 // Extract substring between prefix and suffix
 
+'use strict';
+
 getvaluebetween = (str, p, s) => {
   i = str.indexOf(p);
   if (i === -1) return '';
