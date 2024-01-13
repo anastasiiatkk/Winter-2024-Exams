@@ -3,12 +3,14 @@
 'use strict';
 
 const incNumbers = (obj) => {
-  for (const key in obj) {
-    if (typeof obj[key] === 'number') {
-      obj[key] += 1;
+  const res = Object.assign({}, obj);
+  const entries = Object.entries(res);
+  for (const [key, value] of entries) {
+    if (typeof value === 'number') {
+      res[key] += 1;
     }
   }
-  return obj;
+  return res;
 };
 
 module.exports = incNumbers;
