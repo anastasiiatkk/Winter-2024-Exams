@@ -3,21 +3,11 @@
 'use strict';
 
 const getvaluebetween = (str, prefix, suffix) => {
-  let prefixIndex = str.indexOf(prefix);
+  const prefixIndex = str.indexOf(prefix);
   if (prefixIndex === -1) return '';
-  else {
-    const prefixEndIndex = prefixIndex + prefix.length;
-    str = str.substring(prefixEndIndex);
-    if (suffix) {
-      prefixIndex = str.indexOf(suffix);
-      if (prefixIndex === -1) {
-        return '';
-      } else {
-        str = str.substring(0, prefixIndex);
-      }
-    }
-  }
-  return str;
+  const suffixIndex = str.indexOf(suffix);
+  if (suffixIndex === -1) return '';
+  return str.substring(prefixIndex + 1, suffixIndex);
 };
 
 module.exports = getvaluebetween;
