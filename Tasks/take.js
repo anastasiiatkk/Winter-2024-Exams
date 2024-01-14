@@ -3,11 +3,14 @@
 'use strict';
 
 const copyKeys = (obj, ...keys) => {
+  const resObj = {};
   const objKeys = Object.keys(obj);
-  objKeys.forEach((key) => {
-    if (!keys.includes(key)) delete obj[key];
-  });
-  return obj;
+  for (const key of objKeys) {
+    if (keys.includes(key)) {
+      resObj[key] = obj[key];
+    }
+  }
+  return resObj;
 };
 
 module.exports = copyKeys;
