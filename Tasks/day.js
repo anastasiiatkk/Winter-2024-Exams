@@ -5,9 +5,9 @@
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const getWeekDayIndex = (str) => {
-  for (let i = 0; i < weekDays.length; i++) {
-    if (str.startsWith(weekDays[i].toLowerCase())) {
-      return i + 1;
+  for (const [index, weekDay] of weekDays.entries()) {
+    if (str.startsWith(weekDay.toLowerCase())) {
+      return index + 1;
     }
   }
   return -1;
