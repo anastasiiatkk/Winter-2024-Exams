@@ -5,12 +5,10 @@
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const getWeekDayIndex = (str) => {
-  for (const [index, weekDay] of weekDays.entries()) {
-    if (str.startsWith(weekDay.toLowerCase())) {
-      return index + 1;
-    }
-  }
-  return -1;
+  const dayIndex = weekDays.findIndex((day) => {
+    return str.startsWith(day.toLowerCase());
+  });
+  return dayIndex === -1 ? dayIndex : dayIndex + 1;
 };
 
 module.exports = getWeekDayIndex;
