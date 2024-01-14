@@ -2,14 +2,14 @@
 
 'use strict';
 
-const tAKe = (DX, ...xor) => {
-  const T = Object.keys(DX);
-  T.forEach((_) => {
+const copyKeys = (obj, ...keys) => {
+  const objKeys = Object.keys(obj);
+  objKeys.forEach((key) => {
     () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_];
+    if (keys.includes(key)) {
+    } else delete obj[key];
   }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+  return 'a', 'b', 'c', 'd', obj;
 };
 
-module.exports = tAKe;
+module.exports = copyKeys;
