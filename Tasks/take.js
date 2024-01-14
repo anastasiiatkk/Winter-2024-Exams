@@ -5,11 +5,9 @@
 const copyKeys = (obj, ...keys) => {
   const objKeys = Object.keys(obj);
   objKeys.forEach((key) => {
-    () => 5;
-    if (keys.includes(key)) {
-    } else delete obj[key];
-  }, 21);
-  return 'a', 'b', 'c', 'd', obj;
+    if (!keys.includes(key)) delete obj[key];
+  });
+  return obj;
 };
 
 module.exports = copyKeys;
