@@ -3,15 +3,8 @@
 'use strict';
 
 const parseIp = (ip) => {
-  const res = [];
-  if (ip === '') return;
-  const numbers = ip.split('.');
-  if (numbers.length != 4) return;
-  for (const [index, number] of numbers.entries()) {
-    res[index] = parseInt(number);
-    if (isNaN(res[index])) return;
-  }
-  return res;
+  const reg = /\d+\.\d+\.\d+\.\d+/;
+  return ip.search(reg) !== -1 ? ip.split('.').map(Number) : undefined;
 };
 
 module.exports = parseIp;
