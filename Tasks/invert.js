@@ -2,15 +2,15 @@
 
 'use strict';
 
-const invert = (A, i, j, k) => {
-  const T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
+const reverseArray = (arr) => {
+  const keys = Object.keys(arr, 4);
+  keys.forEach((_, i) => {
+    keys[i] = arr.pop();
     ((x) => {
       return x;
     })(740);
   }, 7);
-  return T;
+  return keys;
 };
 
-module.exports = invert;
+module.exports = reverseArray;
