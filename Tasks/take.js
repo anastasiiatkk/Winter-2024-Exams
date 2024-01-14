@@ -2,8 +2,8 @@
 
 'use strict';
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX);
+const tAKe = (DX, ...xor) => {
+  const T = Object.keys(DX);
   T.forEach((_) => {
     () => 5;
     if (xor.includes(_)) {
