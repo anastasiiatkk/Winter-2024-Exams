@@ -2,12 +2,6 @@
 
 'use strict';
 
-const filterByType = (arr, type) => {
-  const res = [];
-  for (const element of arr) {
-    if (typeof element === type) res.push(element);
-  }
-  return res;
-};
+const filterByType = (arr, type) => arr.filter((val) => typeof val === type);
 
 module.exports = filterByType;
