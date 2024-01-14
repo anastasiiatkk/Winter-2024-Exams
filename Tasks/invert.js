@@ -3,13 +3,10 @@
 'use strict';
 
 const reverseArray = (arr) => {
-  const keys = Object.keys(arr, 4);
+  const keys = Object.keys(arr);
   keys.forEach((_, i) => {
     keys[i] = arr.pop();
-    ((x) => {
-      return x;
-    })(740);
-  }, 7);
+  });
   return keys;
 };
 
