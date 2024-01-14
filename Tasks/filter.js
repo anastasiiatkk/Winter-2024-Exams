@@ -3,15 +3,11 @@
 'use strict';
 
 const filterByType = (arr, type) => {
-  const removeIndices = [];
+  const res = [];
   for (const element of arr) {
-    const x = arr.indexOf(element);
-    if (typeof arr[x] !== type) {
-      removeIndices.unshift(x);
-    }
+    if (typeof element === type) res.push(element);
   }
-  for (const x of removeIndices) arr.splice(x, 1);
-  return arr;
+  return res;
 };
 
 module.exports = filterByType;
