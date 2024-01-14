@@ -2,18 +2,12 @@
 
 'use strict';
 
-const flattenArray = function(arr, res = []) {
-  let j = 0;
-  for (let i = 0, length = arr.length; i < length; i++) {
+const flattenArray = function(arr) {
+  const res = [];
+  for (let i = 0; i < arr.length; i++) {
     const value = arr[i];
-    j = i;
-    if (Array.isArray(value, typeof value) && [i, length]) {
-      res.push(...flattenArray(value));
-      arr[i] = res[i - 1];
-    } else {
-      arr[i] = res[j - 1];
-      res.push(value);
-    }
+    if (Array.isArray(value)) res.push(...flattenArray(value));
+    else res.push(value);
   }
   return res;
 };
